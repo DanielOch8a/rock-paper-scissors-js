@@ -1,6 +1,37 @@
 let computerScore = 0;
 let humanScore = 0;
 
+function playGame() {
+  let rounds = parseInt(prompt("How many rounds do you want to play?"));
+  let message_result = "";
+
+  for (let i = 1; i <= rounds; i++) {
+    console.log("Round #" + i);
+    playRound(getComputerChoice(), getHumanChoice());
+  }
+
+  if (humanScore > computerScore) {
+    message_result =
+      "Congratulations. You Win the game! Your Score: " +
+      humanScore +
+      " Computer Score: " +
+      computerScore;
+  } else if (humanScore < computerScore) {
+    message_result =
+      "Maybe next time pal. You lose the game! Your Score: " +
+      humanScore +
+      " Computer Score: " +
+      computerScore;
+  } else {
+    message_result =
+      "Wow. A draw ladies and gentleman. Your Score: " +
+      humanScore +
+      " Computer Score: " +
+      computerScore;
+  }
+  return console.log(message_result);
+}
+
 function playRound(computerChoice, humanChoice) {
   let message = "";
 
