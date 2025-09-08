@@ -1,6 +1,8 @@
 let computerScore = 0;
 let humanScore = 0;
 
+playGame();
+
 function playGame() {
   let rounds = parseInt(prompt("How many rounds do you want to play?"));
   let message_result = "";
@@ -12,23 +14,25 @@ function playGame() {
 
   if (humanScore > computerScore) {
     message_result =
-      "Congratulations. You Win the game! Your Score: " +
+      "Congratulations. You Win the game!\nYour Score: " +
       humanScore +
       " Computer Score: " +
       computerScore;
   } else if (humanScore < computerScore) {
     message_result =
-      "Maybe next time pal. You lose the game! Your Score: " +
+      "Maybe next time pal. You lose the game!\nYour Score:" +
       humanScore +
       " Computer Score: " +
       computerScore;
   } else {
     message_result =
-      "Wow. A draw ladies and gentleman. Your Score: " +
+      "Wow. A draw ladies and gentleman.\nYour Score: " +
       humanScore +
       " Computer Score: " +
       computerScore;
   }
+
+  alert(message_result);
   return console.log(message_result);
 }
 
@@ -41,17 +45,42 @@ function playRound(computerChoice, humanChoice) {
     (computerChoice === "scissors" && humanChoice === "rock")
   ) {
     humanScore++;
-    message = "Congrats! You Win. " + humanChoice + " beats " + computerChoice;
+    message =
+      "Congrats! You Win. " +
+      humanChoice +
+      " beats " +
+      computerChoice +
+      "\nYour Score: " +
+      humanScore +
+      " Computer Score: " +
+      computerScore;
   } else if (
     (humanChoice === "rock" && computerChoice === "paper") ||
     (humanChoice === "paper" && computerChoice === "scissors") ||
     (humanChoice === "scissors" && computerChoice === "rock")
   ) {
     computerScore++;
-    message = "Fail! You lose. " + computerChoice + " beats " + humanChoice;
+    message =
+      "Fail! You lose. " +
+      computerChoice +
+      " beats " +
+      humanChoice +
+      "\nYour Score: " +
+      humanScore +
+      " Computer Score: " +
+      computerScore;
   } else {
-    message = "Draw! Very Funny. " + humanChoice + " and " + computerChoice;
+    message =
+      "Draw! Very Funny. " +
+      humanChoice +
+      " and " +
+      computerChoice +
+      "\nYour Score: " +
+      humanScore +
+      " Computer Score: " +
+      computerScore;
   }
+  alert(message);
   return console.log(message);
 }
 
