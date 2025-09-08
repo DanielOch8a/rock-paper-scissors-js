@@ -20,7 +20,7 @@ function playGame() {
       computerScore;
   } else if (humanScore < computerScore) {
     message_result =
-      "Maybe next time pal. You lose the game!\nYour Score:" +
+      "Maybe next time pal. You lose the game!\nYour Score: " +
       humanScore +
       " Computer Score: " +
       computerScore;
@@ -102,15 +102,15 @@ function getComputerChoice() {
 function getHumanChoice() {
   let choice = parseInt(
     prompt(
-      "Please choice with a number an option 0)rock, 1)paper or 2)scissors"
+      "Please choose with a number an option.\n 1)rock, 2)paper or 3)scissors"
     )
   );
 
-  if (choice === 0) {
+  if (choice === 1) {
     choice = "rock";
-  } else if (choice === 1) {
-    choice = "paper";
   } else if (choice === 2) {
+    choice = "paper";
+  } else if (choice === 3) {
     choice = "scissors";
   }
 
