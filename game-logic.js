@@ -1,3 +1,29 @@
+let computerScore = 0;
+let humanScore = 0;
+
+function playRound(computerChoice, humanChoice) {
+  let message = "";
+
+  if (
+    (computerChoice === "rock" && humanChoice === "paper") ||
+    (computerChoice === "paper" && humanChoice === "scissors") ||
+    (computerChoice === "scissors" && humanChoice === "rock")
+  ) {
+    humanScore++;
+    message = "Congrats! You Win. " + humanChoice + " beats " + computerChoice;
+  } else if (
+    (humanChoice === "rock" && computerChoice === "paper") ||
+    (humanChoice === "paper" && computerChoice === "scissors") ||
+    (humanChoice === "scissors" && computerChoice === "rock")
+  ) {
+    computerScore++;
+    message = "Fail! You lose. " + computerChoice + " beats " + humanChoice;
+  } else {
+    message = "Draw! Very Funny. " + humanChoice + " and " + computerChoice;
+  }
+  return console.log(message);
+}
+
 function getComputerChoice() {
   let random_number = Math.floor(Math.random() * 3);
   let choice = "";
